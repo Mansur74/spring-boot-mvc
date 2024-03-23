@@ -1,0 +1,55 @@
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout.html}">
+
+<head>
+	<h1>Login</h1>
+</head>
+
+<body class="d-flex flex-column h-100">
+	<main class="flex-shrink-0">
+		<!-- Page Content-->
+		<section layout:fragment="body" class="py-5">
+			<div class="container">
+				<div th:if="${param.error}" class="alert alert-danger">
+					Invalid username and password!
+				</div>
+
+				<div th:if="${param.logout}" class="alert alert-success">
+					You have been logged out!
+				</div>
+				<div class="form-signin w-100 m-auto">
+					<form role="form" method="post" th:action="@{/login}">
+						<img class="mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" />
+						<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+						<div class="form-floating">
+							<input
+									type="text"
+									class="form-control"
+									id="username"
+									name="username"
+									placeholder="Username"
+									autofocus="true">
+							<label htmlFor="username">Username</label>
+						</div>
+						<div class="form-floating">
+							<input
+									type="password"
+									class="form-control"
+									id="password"
+									name="password"
+									placeholder="Password">
+							<label htmlFor="password">Password</label>
+						</div>
+
+						<button type="submit" value="Log in" class="btn btn-primary w-100 py-2 mb-3">Login</button>
+						<a th:href="@{/register}" class="btn btn-black">Don't have an account already? Register Here.</a>
+						<p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>
