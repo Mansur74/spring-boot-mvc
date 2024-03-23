@@ -1,4 +1,4 @@
-Java, Spring Boot MVC Application
+# Java, Spring Boot MVC Application
 Maven
 Postgre SQL
 Thymleaf
